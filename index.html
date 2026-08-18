@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="gu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>S J Bhadani | Coins Collection</title>
+    <title>S J Bhadani | Coins & Notes Collection</title>
 
     <style>
         * {
@@ -13,176 +14,508 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, "Noto Sans Gujarati", sans-serif;
-            background: #f4f6f8;
-            color: #222;
-            line-height: 1.8;
+        html {
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, "Noto Sans Gujarati", sans-serif;
+            background:
+                radial-gradient(circle at top left, #fff4d6, transparent 35%),
+                linear-gradient(135deg, #f7f8fa, #eef1f5);
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           MAIN CONTAINER
+        ========================= */
+
         .container {
-            width: min(1100px, 94%);
-            margin: 40px auto;
+            width: min(1150px, 94%);
+            margin: 35px auto;
         }
 
         .card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.10);
             overflow: hidden;
         }
 
-        /* Main Image */
+        /* =========================
+           HERO
+        ========================= */
+
         .hero-image {
             width: 100%;
-            height: auto;
+            display: block;
             max-height: 650px;
             object-fit: contain;
-            display: block;
-            border-radius: 15px;
-            background: #f1f1f1;
+            border-radius: 20px;
+            background: #f4f4f4;
         }
 
-        /* Button Area */
         .button-area {
             text-align: center;
-            margin: 25px 0 35px;
+            margin: 25px 0 40px;
         }
 
         .article-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
             padding: 14px 32px;
-            background: linear-gradient(135deg, #ffb300, #ff8f00);
+            border-radius: 50px;
+
+            background: linear-gradient(135deg, #ffb300, #ff7b00);
             color: #111;
-            font-size: 22px;
-            font-weight: 700;
+
+            font-size: 20px;
+            font-weight: 800;
             text-decoration: none;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.3);
+
+            box-shadow: 0 8px 25px rgba(255, 145, 0, 0.30);
+
             transition: 0.3s ease;
         }
 
         .article-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(255, 145, 0, 0.40);
         }
 
-        /* Heading */
+        /* =========================
+           TITLE
+        ========================= */
+
         .title {
-            font-size: 38px;
-            font-weight: 800;
+            font-size: clamp(25px, 4vw, 42px);
             line-height: 1.4;
+            font-weight: 800;
             margin-bottom: 20px;
-            color: #222;
         }
 
-        /* Paragraph */
         .description {
-            font-size: 21px;
-            text-align: justify;
+            font-size: clamp(17px, 2vw, 21px);
             color: #444;
+            text-align: justify;
+            line-height: 1.9;
         }
 
-        /* Information box */
+        .description + .description {
+            margin-top: 20px;
+        }
+
+        /* =========================
+           INFO BOX
+        ========================= */
+
         .info-box {
-            margin-top: 30px;
-            padding: 20px;
-            border-left: 5px solid #ff9800;
-            background: #fff8e8;
-            border-radius: 10px;
+            margin: 30px 0 45px;
+
+            padding: 20px 24px;
+
+            border-radius: 15px;
+            border-left: 6px solid #ff9800;
+
+            background: linear-gradient(
+                135deg,
+                #fff8e8,
+                #fffdf8
+            );
+
+            color: #555;
+            font-size: 18px;
         }
 
         .info-box strong {
             color: #d97700;
         }
 
-        /* Tablet */
-        @media (max-width: 768px) {
+        /* =========================
+           GALLERY HEADER
+        ========================= */
 
-            .container {
-                width: 94%;
-                margin: 20px auto;
-            }
+        .gallery-section {
+            margin-top: 40px;
+        }
 
-            .card {
-                padding: 18px;
-                border-radius: 15px;
-            }
+        .gallery-heading {
+            text-align: center;
+            margin-bottom: 25px;
+        }
 
-            .hero-image {
-                border-radius: 10px;
-            }
+        .gallery-heading h2 {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 900;
+        }
 
-            .title {
-                font-size: 28px;
-                line-height: 1.45;
-            }
+        .gallery-heading p {
+            margin-top: 5px;
+            color: #777;
+            font-size: 16px;
+        }
 
-            .description {
-                font-size: 18px;
-                line-height: 1.8;
-                text-align: left;
-            }
+        /* =========================
+           TABS
+        ========================= */
 
-            .article-button {
-                font-size: 18px;
-                padding: 12px 25px;
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .tab-btn {
+            border: none;
+            cursor: pointer;
+
+            padding: 11px 24px;
+
+            border-radius: 50px;
+
+            background: #f0f1f3;
+            color: #555;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            background: #ffe0a3;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #ffb300, #ff7b00);
+            color: #111;
+
+            box-shadow: 0 6px 18px rgba(255, 145, 0, 0.25);
+        }
+
+        /* =========================
+           GALLERY GRID
+        ========================= */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-item {
+            position: relative;
+
+            aspect-ratio: 1 / 1;
+
+            border-radius: 18px;
+            overflow: hidden;
+
+            cursor: pointer;
+
+            background: #eee;
+
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+
+            transition: transform 0.3s ease,
+                        box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* =========================
+           IMAGE OVERLAY
+        ========================= */
+
+        .image-overlay {
+            position: absolute;
+
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            padding: 35px 15px 15px;
+
+            background: linear-gradient(
+                transparent,
+                rgba(0, 0, 0, 0.78)
+            );
+
+            color: white;
+
+            opacity: 0;
+
+            transition: 0.3s ease;
+        }
+
+        .gallery-item:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .image-overlay h3 {
+            font-size: 17px;
+        }
+
+        .image-overlay span {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* =========================
+           LIGHTBOX
+        ========================= */
+
+        .lightbox {
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, 0.94);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 9999;
+
+            padding: 25px;
+        }
+
+        .lightbox.show {
+            display: flex;
+        }
+
+        .lightbox-image {
+            max-width: 90vw;
+            max-height: 82vh;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+
+            user-select: none;
+        }
+
+        .close-btn,
+        .prev-btn,
+        .next-btn {
+            position: absolute;
+
+            border: none;
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.14);
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.25s ease;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .close-btn:hover,
+        .prev-btn:hover,
+        .next-btn:hover {
+            background: rgba(255, 255, 255, 0.28);
+            transform: scale(1.08);
+        }
+
+        .close-btn {
+            top: 20px;
+            right: 20px;
+        }
+
+        .prev-btn {
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .next-btn {
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .prev-btn:hover,
+        .next-btn:hover {
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .lightbox-caption {
+            position: absolute;
+
+            bottom: 25px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: 600;
+
+            text-align: center;
+
+            max-width: 90%;
+        }
+
+        .image-counter {
+            position: absolute;
+
+            top: 25px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            color: rgba(255, 255, 255, 0.8);
+
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .gallery {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        /* Mobile */
-        @media (max-width: 480px) {
-
-            body {
-                line-height: 1.7;
-            }
+        @media (max-width: 650px) {
 
             .container {
                 width: 96%;
-                margin: 12px auto;
+                margin: 15px auto;
             }
 
             .card {
-                padding: 12px;
-                border-radius: 12px;
+                padding: 14px;
+                border-radius: 18px;
             }
 
             .hero-image {
-                width: 100%;
-                border-radius: 8px;
-            }
-
-            .button-area {
-                margin: 18px 0 25px;
+                border-radius: 12px;
             }
 
             .article-button {
                 width: 100%;
                 font-size: 17px;
-                padding: 12px 15px;
-                border-radius: 8px;
-            }
-
-            .title {
-                font-size: 23px;
-                line-height: 1.5;
-                margin-bottom: 15px;
+                padding: 13px 20px;
             }
 
             .description {
-                font-size: 17px;
-                line-height: 1.8;
-                text-align: justify;
+                text-align: left;
             }
 
-            .info-box {
-                padding: 15px;
-                margin-top: 20px;
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .gallery-item {
+                border-radius: 13px;
+            }
+
+            .image-overlay {
+                opacity: 1;
+                padding: 25px 10px 10px;
+            }
+
+            .image-overlay h3 {
+                font-size: 14px;
+            }
+
+            .image-overlay span {
+                font-size: 11px;
+            }
+
+            .lightbox {
+                padding: 10px;
+            }
+
+            .lightbox-image {
+                max-width: 96vw;
+                max-height: 75vh;
+            }
+
+            .prev-btn,
+            .next-btn {
+                width: 42px;
+                height: 42px;
+                font-size: 22px;
+            }
+
+            .prev-btn {
+                left: 8px;
+            }
+
+            .next-btn {
+                right: 8px;
+            }
+
+            .close-btn {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            .gallery {
+                gap: 8px;
+            }
+
+            .tab-btn {
+                padding: 9px 18px;
+                font-size: 14px;
             }
         }
     </style>
 </head>
+
 
 <body>
 
@@ -190,32 +523,49 @@
 
         <article class="card">
 
-            <!-- Coin Collector Image -->
+            <!-- =========================
+                 HERO IMAGE
+            ========================== -->
+
             <img
                 src="./img/coin collector.PNG"
                 alt="S J Bhadani Coin Collection"
                 class="hero-image"
             >
 
-            <!-- Original Article Button -->
+
+            <!-- =========================
+                 ARTICLE BUTTON
+            ========================== -->
+
             <div class="button-area">
+
                 <a
                     href="https://www.etvbharat.com/gujarati/gujarat/city/bhavnagar/treasure-of-collection-of-ancient-and-1835-coins-near-shambhubhai-of-vartej-village-of-bhavnagar/gj20211109124842058"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="article-button"
                 >
-                    Click Here...
+                    📰 Article વાંચો
                 </a>
+
             </div>
 
-            <!-- Title -->
+
+            <!-- =========================
+                 TITLE
+            ========================== -->
+
             <h1 class="title">
-                ગાંધીજીની બંધ થઈ ગયેલી ચલણી નોટની પ્રિન્ટવાળી
-                2 થી 500 સુધીની ચલણી નોટો
+                ગાંધીજીની બંધ થઈ ગયેલી ચલણી નોટની
+                પ્રિન્ટવાળી 2 થી 500 સુધીની ચલણી નોટો
             </h1>
 
-            <!-- Description -->
+
+            <!-- =========================
+                 DESCRIPTION
+            ========================== -->
+
             <p class="description">
                 શંભુભાઈ પાસે 1835ની સાલ પહેલાના ચારથી પાંચ સિક્કા
                 (Currency coins) છે. સાથે રાણી સિક્કા પણ છે. શંભુભાઈને તેમના
@@ -226,23 +576,593 @@
                 પહેલાના સમયમાં જાતે કાપીને પૈસાનું ચલણ હતું.
             </p>
 
-            <p class="description" style="margin-top: 20px;">
+            <p class="description">
                 આ સિવાય શંભુભાઈએ ગાંધીજીની એવી નોટોનો સંગ્રહ કર્યો છે,
                 જેમાં ગાંધીજી પુસ્તક વાંચતા હોય તેવી પ્રિન્ટની બે રૂપિયાથી
                 લઈને 500 રૂપિયા સુધીની નોટો એકત્રિત કરી છે. જે પ્રિન્ટ હવે
                 ચલણી નોટોમાં વર્ષોથી જોવા મળતી નથી.
             </p>
 
-            <!-- Highlight -->
+
+            <!-- =========================
+                 INFO
+            ========================== -->
+
             <div class="info-box">
-                <strong>Coin Collection:</strong>
-                1835 પહેલાંના જૂના સિક્કાઓથી લઈને ગાંધીજીની જૂની
-                ચલણી નોટો સુધીનો અનોખો સંગ્રહ.
+
+                <strong>🏛️ Collection:</strong>
+
+                1835 પહેલાંના જૂના સિક્કાઓથી લઈને
+                ગાંધીજીની જૂની ચલણી નોટો સુધીનો અનોખો સંગ્રહ.
             </div>
+
+
+            <!-- =========================
+                 GALLERY
+            ========================== -->
+
+            <section class="gallery-section">
+
+                <div class="gallery-heading">
+
+                    <h2>
+                        Collection Gallery
+                    </h2>
+
+                    <p>
+                        સિક્કા અને જૂની ચલણી નોટોનો સંગ્રહ
+                    </p>
+
+                </div>
+
+
+                <!-- TABS -->
+
+                <div class="tabs">
+
+                    <button
+                        class="tab-btn active"
+                        data-filter="all"
+                    >
+                        ✨ All
+                    </button>
+
+                    <button
+                        class="tab-btn"
+                        data-filter="coin"
+                    >
+                        🪙 Coins
+                    </button>
+
+                    <button
+                        class="tab-btn"
+                        data-filter="note"
+                    >
+                        💴 Notes
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     GALLERY ITEMS
+                ========================== -->
+
+                <div class="gallery">
+
+
+                    <!-- COINS -->
+
+                    <div
+                        class="gallery-item"
+                        data-category="coin"
+                        data-title="જૂનો સિક્કો"
+                    >
+
+                        <img
+                            src="./img/coins/coin1.jpg"
+                            alt="જૂનો સિક્કો"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>🪙 જૂનો સિક્કો</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="coin"
+                        data-title="પ્રાચીન સિક્કો"
+                    >
+
+                        <img
+                            src="./img/coins/coin2.jpg"
+                            alt="પ્રાચીન સિક્કો"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>🪙 પ્રાચીન સિક્કો</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="coin"
+                        data-title="તાંબાનો સિક્કો"
+                    >
+
+                        <img
+                            src="./img/coins/coin3.jpg"
+                            alt="તાંબાનો સિક્કો"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>🪙 તાંબાનો સિક્કો</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="coin"
+                        data-title="રાણી સિક્કો"
+                    >
+
+                        <img
+                            src="./img/coins/coin4.jpg"
+                            alt="રાણી સિક્કો"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>👑 રાણી સિક્કો</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="coin"
+                        data-title="જૂનો ચલણી સિક્કો"
+                    >
+
+                        <img
+                            src="./img/coins/coin5.jpg"
+                            alt="જૂનો ચલણી સિક્કો"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>🪙 ચલણી સિક્કો</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTES -->
+
+                    <div
+                        class="gallery-item"
+                        data-category="note"
+                        data-title="₹2 જૂની નોટ"
+                    >
+
+                        <img
+                            src="./img/notes/note1.jpg"
+                            alt="₹2 જૂની નોટ"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>💴 ₹2 નોટ</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="note"
+                        data-title="₹5 જૂની નોટ"
+                    >
+
+                        <img
+                            src="./img/notes/note2.jpg"
+                            alt="₹5 જૂની નોટ"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>💴 ₹5 નોટ</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="note"
+                        data-title="₹10 જૂની નોટ"
+                    >
+
+                        <img
+                            src="./img/notes/note3.jpg"
+                            alt="₹10 જૂની નોટ"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>💴 ₹10 નોટ</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="note"
+                        data-title="₹100 જૂની નોટ"
+                    >
+
+                        <img
+                            src="./img/notes/note4.jpg"
+                            alt="₹100 જૂની નોટ"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>💴 ₹100 નોટ</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="gallery-item"
+                        data-category="note"
+                        data-title="₹500 જૂની નોટ"
+                    >
+
+                        <img
+                            src="./img/notes/note5.jpg"
+                            alt="₹500 જૂની નોટ"
+                            loading="lazy"
+                        >
+
+                        <div class="image-overlay">
+
+                            <h3>💴 ₹500 નોટ</h3>
+
+                            <span>Click to view</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
 
         </article>
 
     </main>
 
+
+    <!-- =========================
+         LIGHTBOX
+    ========================== -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+    >
+
+        <button
+            class="close-btn"
+            id="closeBtn"
+            aria-label="Close"
+        >
+            ×
+        </button>
+
+        <button
+            class="prev-btn"
+            id="prevBtn"
+            aria-label="Previous"
+        >
+            ‹
+        </button>
+
+        <img
+            class="lightbox-image"
+            id="lightboxImage"
+            src=""
+            alt=""
+        >
+
+        <button
+            class="next-btn"
+            id="nextBtn"
+            aria-label="Next"
+        >
+            ›
+        </button>
+
+        <div
+            class="image-counter"
+            id="imageCounter"
+        >
+        </div>
+
+        <div
+            class="lightbox-caption"
+            id="lightboxCaption"
+        >
+        </div>
+
+    </div>
+
+
+    <script>
+
+        /* =========================
+           GALLERY FILTER
+        ========================== */
+
+        const tabs = document.querySelectorAll(".tab-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        tabs.forEach(tab => {
+
+            tab.addEventListener("click", () => {
+
+                tabs.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                tab.classList.add("active");
+
+                const filter = tab.dataset.filter;
+
+                galleryItems.forEach(item => {
+
+                    if (
+                        filter === "all" ||
+                        item.dataset.category === filter
+                    ) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        /* =========================
+           LIGHTBOX
+        ========================== */
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+        const lightboxCaption =
+            document.getElementById("lightboxCaption");
+
+        const imageCounter =
+            document.getElementById("imageCounter");
+
+        const closeBtn =
+            document.getElementById("closeBtn");
+
+        const prevBtn =
+            document.getElementById("prevBtn");
+
+        const nextBtn =
+            document.getElementById("nextBtn");
+
+
+        let currentIndex = 0;
+
+
+        function getVisibleItems() {
+
+            return Array.from(galleryItems)
+                .filter(item => item.style.display !== "none");
+
+        }
+
+
+        function openLightbox(item) {
+
+            const visibleItems = getVisibleItems();
+
+            currentIndex =
+                visibleItems.indexOf(item);
+
+            showImage();
+
+            lightbox.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function showImage() {
+
+            const visibleItems = getVisibleItems();
+
+            if (!visibleItems.length) return;
+
+            const item =
+                visibleItems[currentIndex];
+
+            const image =
+                item.querySelector("img");
+
+            lightboxImage.src = image.src;
+
+            lightboxImage.alt = image.alt;
+
+            lightboxCaption.textContent =
+                item.dataset.title || image.alt;
+
+            imageCounter.textContent =
+                `${currentIndex + 1} / ${visibleItems.length}`;
+        }
+
+
+        galleryItems.forEach(item => {
+
+            item.addEventListener("click", () => {
+
+                openLightbox(item);
+
+            });
+
+        });
+
+
+        /* NEXT */
+
+        nextBtn.addEventListener("click", event => {
+
+            event.stopPropagation();
+
+            const visibleItems = getVisibleItems();
+
+            currentIndex++;
+
+            if (currentIndex >= visibleItems.length) {
+                currentIndex = 0;
+            }
+
+            showImage();
+
+        });
+
+
+        /* PREVIOUS */
+
+        prevBtn.addEventListener("click", event => {
+
+            event.stopPropagation();
+
+            const visibleItems = getVisibleItems();
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = visibleItems.length - 1;
+            }
+
+            showImage();
+
+        });
+
+
+        /* CLOSE */
+
+        function closeLightbox() {
+
+            lightbox.classList.remove("show");
+
+            document.body.style.overflow = "";
+        }
+
+
+        closeBtn.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        /* CLICK OUTSIDE */
+
+        lightbox.addEventListener("click", event => {
+
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+
+        });
+
+
+        /* KEYBOARD */
+
+        document.addEventListener("keydown", event => {
+
+            if (!lightbox.classList.contains("show")) {
+                return;
+            }
+
+            if (event.key === "Escape") {
+                closeLightbox();
+            }
+
+            if (event.key === "ArrowRight") {
+                nextBtn.click();
+            }
+
+            if (event.key === "ArrowLeft") {
+                prevBtn.click();
+            }
+
+        });
+
+    </script>
+
 </body>
+
 </html>
